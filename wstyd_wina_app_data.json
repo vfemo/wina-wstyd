@@ -1,0 +1,137 @@
+{
+  "sections": {
+    "differences": {
+      "title": "Różnice między wstydem a poczuciem winy",
+      "content": {
+        "wstyd": {
+          "definicja": "Globalna ocena siebie jako złego, niewartościowego",
+          "mysl": "Jestem beznadziejny/a",
+          "reakcja_ciala": "Rumieńce, uczucie gorąca, chęć ukrycia się",
+          "zachowanie": "Wycofanie, izolacja, unikanie",
+          "cel": "Atakuje tożsamość - 'jestem zły'"
+        },
+        "wina": {
+          "definicja": "Negatywna ocena konkretnego zachowania",
+          "mysl": "Zrobiłem/am coś złego",
+          "reakcja_ciala": "Napięcie w żołądku, ciężkość",
+          "zachowanie": "Próby naprawy, przeprosiny",
+          "cel": "Skupia się na zachowaniu - 'zrobiłem coś złego'"
+        }
+      }
+    },
+    "uzasadnione_vs_nieuzasadnione": {
+      "title": "Jak odróżnić uzasadnione od nieuzasadnionych emocji",
+      "kryteria": {
+        "fakty": [
+          "Co dokładnie się wydarzyło?",
+          "Czy ktoś realnie ucierpiał?",
+          "Czy naruszyłem ważną normę lub wartość?",
+          "Czy moja reakcja jest proporcjonalna?"
+        ],
+        "przekonania": [
+          "Czy używam słów 'zawsze', 'nigdy', 'muszę'?",
+          "Czy to globalny osąd o mnie jako osobie?",
+          "Czy wynikam z starych przekonań rodzinnych?",
+          "Czy inni tak by zareagowali?"
+        ]
+      }
+    },
+    "regulacja": {
+      "title": "Kiedy regulować emocje",
+      "kiedy_regulowac": [
+        "Gdy emocje są zbyt intensywne i paraliżują",
+        "Gdy prowadzą do destrukcyjnych zachowań",
+        "Gdy nie motywują do naprawy, tylko do samobiczowania",
+        "Gdy jesteś poza strefą tolerancji"
+      ],
+      "kiedy_sluchac": [
+        "Gdy są proporcjonalne i motywują do naprawy",
+        "Gdy można bezpiecznie je przeżyć",
+        "Gdy dostarczają ważnych informacji",
+        "Gdy prowadzą do konstruktywnych działań"
+      ]
+    },
+    "techniki": {
+      "regulacja_wstydu": [
+        "Nazwij emocję: 'Czuję wstyd, bo...'",
+        "Oddychaj głęboko i zatrzymaj się",
+        "Praktykuj współczucie dla siebie",
+        "Znajdź zaufaną osobę do rozmowy",
+        "Kwestionuj globalne osądy o sobie"
+      ],
+      "regulacja_winy": [
+        "Sprawdź fakty vs przekonania",
+        "Określ, czy możesz naprawić sytuację",
+        "Przeproś, jeśli to uzasadnione",
+        "Wyciągnij wnioski na przyszłość",
+        "Zastąp samokrytykę konstruktywnymi działaniami"
+      ]
+    },
+    "transformacja": {
+      "title": "Jak zamienić wstyd w poczucie winy",
+      "kroki": [
+        "Przejdź od 'jestem zły' do 'zrobiłem coś złego'",
+        "Skup się na konkretnym zachowaniu, nie na całej osobie",
+        "Zadaj pytanie: 'Co mogę naprawić?' zamiast 'Dlaczego jestem taki?'",
+        "Praktykuj samoakceptację przy jednoczesnej odpowiedzialności",
+        "Używaj języka zachowań: 'Gdy robiłem X...' zamiast 'Jestem osobą, która...'"
+      ]
+    }
+  },
+  "exercises": {
+    "dziennik_wstydu": {
+      "title": "30-dniowy dziennik wstydu",
+      "instrukcja": "Codziennie przez 5-10 minut wieczorem zapisuj swoje doświadczenia wstydu",
+      "pytania": [
+        "Co się wydarzyło?",
+        "Co wywołało wstyd?",
+        "Gdzie poczułem to w ciele?",
+        "Co mówiłem sobie?",
+        "Jak zareagowałem?",
+        "Co powiedziałbym przyjacielowi w tej sytuacji?",
+        "Intensywność 1-10"
+      ]
+    },
+    "sprawdzanie_faktow": {
+      "title": "Ćwiczenie sprawdzania faktów",
+      "kroki": [
+        "Opisz sytuację faktami (co można nagrać kamerą)",
+        "Wypisz swoje myśli i interpretacje",
+        "Zadaj pytanie: Czy to fakt czy moja interpretacja?",
+        "Poproś zaufaną osobę o opinię",
+        "Zastąp interpretacje faktami"
+      ]
+    },
+    "oddechowe": {
+      "title": "Techniki oddechowe",
+      "technika_4_7_8": {
+        "nazwa": "Technika 4-7-8",
+        "instrukcja": [
+          "Wdech przez nos przez 4 sekundy",
+          "Wstrzymaj oddech na 7 sekund",
+          "Wydech przez usta przez 8 sekund",
+          "Powtórz 4 razy"
+        ]
+      },
+      "oddech_brzuszny": {
+        "nazwa": "Oddech brzuszny",
+        "instrukcja": [
+          "Połóż rękę na brzuchu",
+          "Wdech przez nos, unoszący brzuch",
+          "Wydech przez usta, opuszczający brzuch",
+          "Kontynuuj 2-5 minut"
+        ]
+      }
+    }
+  },
+  "audio_scripts": {
+    "medytacja_wstyd": {
+      "title": "Medytacja uważności na wstyd",
+      "tekst": "\n            Znajdź wygodną pozycję i zamknij oczy... \n            Zrób kilka głębokich oddechów... \n            Jeśli pojawia się uczucie wstydu, po prostu je zauważ... \n            Nie próbuj go zmieniać ani przepędzić... \n            Obserwuj, gdzie czujesz go w ciele... \n            Powiedz sobie łagodnie: 'To tylko emocja, przejdzie'... \n            Wyślij sobie współczucie, jakbyś wysyłał je przyjacielowi...\n            "
+    },
+    "relaksacja_wina": {
+      "title": "Ćwiczenie uwalniania poczucia winy",
+      "tekst": "\n            Usiądź wygodnie i zrób kilka głębokich oddechów...\n            Pomyśl o sytuacji, która wywołuje poczucie winy...\n            Zadaj sobie pytania: Co się naprawdę wydarzyło? Czy mogę to naprawić?\n            Jeśli tak - zaplanuj konkretne działania...\n            Jeśli nie - pozwól sobie na wybaczenie...\n            Powtarzaj: 'Jestem człowiekiem, popełniam błędy i mogę się uczyć'...\n            "
+    }
+  }
+}

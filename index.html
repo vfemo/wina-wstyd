@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wstyd vs Poczucie Winy - Przewodnik Terapeutyczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Wstyd vs Poczucie Winy</h1>
+            <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-section="home">Start</button>
+                <button class="nav-btn" data-section="differences">Różnice</button>
+                <button class="nav-btn" data-section="assessment">Ocena</button>
+                <button class="nav-btn" data-section="regulation">Regulacja</button>
+                <button class="nav-btn" data-section="exercises">Ćwiczenia</button>
+                <button class="nav-btn" data-section="audio">Audio</button>
+            </nav>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="intro-card card">
+                <div class="card__body">
+                    <h2>Witaj w przewodniku po wstydzie i poczuciu winy</h2>
+                    <p>Te dwie emocje często mylone ze sobą mają zupełnie różne funkcje i wymagają różnych podejść. Poznaj różnice między nimi i naucz się, jak konstruktywnie z nimi pracować.</p>
+                    
+                    <div class="quick-start">
+                        <h3>Zacznij od:</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn--primary" onclick="showSection('assessment')">Test podatności na wstyd</button>
+                            <button class="btn btn--secondary" onclick="showSection('differences')">Poznaj różnice</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-item card">
+                    <div class="card__body">
+                        <h3>🔍 Rozpoznanie</h3>
+                        <p>Naucz się odróżniać wstyd od poczucia winy i rozpoznawać, kiedy emocje są uzasadnione.</p>
+                    </div>
+                </div>
+                <div class="overview-item card">
+                    <div class="card__body">
+                        <h3>⚖️ Regulacja</h3>
+                        <p>Poznaj różne techniki regulacji emocji i dowiedz się, kiedy je stosować.</p>
+                    </div>
+                </div>
+                <div class="overview-item card">
+                    <div class="card__body">
+                        <h3>🎯 Praktyka</h3>
+                        <p>Wykonuj interaktywne ćwiczenia i prowadź dziennik swoich doświadczeń.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differences Section -->
+        <section id="differences" class="section">
+            <h2>Różnice między wstydem a poczuciem winy</h2>
+            
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-cell">Aspekt</div>
+                    <div class="comparison-cell shame">Wstyd</div>
+                    <div class="comparison-cell guilt">Poczucie winy</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell aspect">Definicja</div>
+                    <div class="comparison-cell">Globalna ocena siebie jako złego, niewartościowego</div>
+                    <div class="comparison-cell">Negatywna ocena konkretnego zachowania</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell aspect">Charakterystyczna myśl</div>
+                    <div class="comparison-cell">"Jestem beznadziejny/a"</div>
+                    <div class="comparison-cell">"Zrobiłem/am coś złego"</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell aspect">Reakcja ciała</div>
+                    <div class="comparison-cell">Rumieńce, uczucie gorąca, chęć ukrycia się</div>
+                    <div class="comparison-cell">Napięcie w żołądku, ciężkość</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell aspect">Zachowanie</div>
+                    <div class="comparison-cell">Wycofanie, izolacja, unikanie</div>
+                    <div class="comparison-cell">Próby naprawy, przeprosiny</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell aspect">Na co się skupia</div>
+                    <div class="comparison-cell">Atakuje tożsamość - "jestem zły"</div>
+                    <div class="comparison-cell">Skupia się na zachowaniu - "zrobiłem coś złego"</div>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <h3>Przykłady z życia</h3>
+                <div class="examples-grid">
+                    <div class="example-card card">
+                        <div class="card__body">
+                            <h4>Wstyd</h4>
+                            <p><strong>Sytuacja:</strong> Popełniłeś błąd w pracy</p>
+                            <p><strong>Myśl wstydu:</strong> "Jestem kompletnie beznadziejny. Wszyscy widzą, że nie nadaję się do tej pracy."</p>
+                            <p><strong>Reakcja:</strong> Unikasz kontaktu wzrokowego, chowasz się, rezygnujesz z dalszych inicjatyw</p>
+                        </div>
+                    </div>
+                    <div class="example-card card">
+                        <div class="card__body">
+                            <h4>Poczucie winy</h4>
+                            <p><strong>Sytuacja:</strong> Popełniłeś błąd w pracy</p>
+                            <p><strong>Myśl poczucia winy:</strong> "Zrobiłem błąd. Powinienem był sprawdzić to dokładniej."</p>
+                            <p><strong>Reakcja:</strong> Przepraszasz, naprawiasz błąd, uczysz się na przyszłość</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Section -->
+        <section id="assessment" class="section">
+            <h2>Ocena emocji</h2>
+            
+            <div class="assessment-tabs">
+                <button class="tab-btn active" data-tab="vulnerability">Test podatności</button>
+                <button class="tab-btn" data-tab="justified">Czy emocja jest uzasadniona?</button>
+                <button class="tab-btn" data-tab="intensity">Kalkulator intensywności</button>
+            </div>
+
+            <!-- Vulnerability Test -->
+            <div id="vulnerability" class="tab-content active">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Test podatności na wstyd</h3>
+                        <p>Odpowiedz na poniższe pytania, oceniając każde w skali 1-5:</p>
+                        <div class="vulnerability-test">
+                            <div id="vulnerability-questions"></div>
+                            <button class="btn btn--primary" onclick="calculateVulnerability()">Oblicz wynik</button>
+                            <div id="vulnerability-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Justified Assessment -->
+            <div id="justified" class="tab-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Sprawdzanie uzasadnienia emocji</h3>
+                        <div class="fact-check-tool">
+                            <h4>Krok 1: Opisz sytuację</h4>
+                            <textarea id="situation-description" class="form-control" placeholder="Opisz co się wydarzyło używając tylko faktów (co można by nagrać kamerą)..."></textarea>
+                            
+                            <h4>Krok 2: Zapisz swoje myśli</h4>
+                            <textarea id="thoughts-description" class="form-control" placeholder="Jakie myśli przychodzą ci do głowy? Jakie interpretacje robisz?"></textarea>
+                            
+                            <h4>Krok 3: Zadaj sobie pytania kontrolne</h4>
+                            <div class="control-questions">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q1"> Czy używam słów "zawsze", "nigdy", "muszę"?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q2"> Czy to globalny osąd o mnie jako osobie?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q3"> Czy wynika to ze starych przekonań rodzinnych?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q4"> Czy ktoś realnie ucierpiał?
+                                </label>
+                            </div>
+                            
+                            <button class="btn btn--primary" onclick="analyzeJustification()">Przeanalizuj</button>
+                            <div id="justification-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intensity Calculator -->
+            <div id="intensity" class="tab-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Kalkulator intensywności emocji</h3>
+                        <div class="intensity-tool">
+                            <label class="form-label">Jak intensywnie czujesz tę emocję? (1-10)</label>
+                            <input type="range" id="intensity-slider" class="intensity-slider" min="1" max="10" value="5">
+                            <div class="intensity-value" id="intensity-value">5</div>
+                            
+                            <label class="form-label">Rodzaj emocji:</label>
+                            <select id="emotion-type" class="form-control">
+                                <option value="shame">Wstyd</option>
+                                <option value="guilt">Poczucie winy</option>
+                            </select>
+                            
+                            <button class="btn btn--primary" onclick="calculateIntensity()">Oceń intensywność</button>
+                            <div id="intensity-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulation Section -->
+        <section id="regulation" class="section">
+            <h2>Regulacja emocji</h2>
+            
+            <div class="regulation-guide">
+                <div class="when-regulate card">
+                    <div class="card__body">
+                        <h3>Kiedy regulować emocje?</h3>
+                        <ul>
+                            <li>Gdy są zbyt intensywne i paraliżują</li>
+                            <li>Gdy prowadzą do destrukcyjnych zachowań</li>
+                            <li>Gdy nie motywują do naprawy, tylko do samobiczowania</li>
+                            <li>Gdy jesteś poza strefą tolerancji</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="when-listen card">
+                    <div class="card__body">
+                        <h3>Kiedy słuchać emocji?</h3>
+                        <ul>
+                            <li>Gdy są proporcjonalne i motywują do naprawy</li>
+                            <li>Gdy można bezpiecznie je przeżyć</li>
+                            <li>Gdy dostarczają ważnych informacji</li>
+                            <li>Gdy prowadzą do konstruktywnych działań</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="techniques-section">
+                <h3>Techniki regulacji</h3>
+                <div class="techniques-tabs">
+                    <button class="tech-tab-btn active" data-tech="shame">Regulacja wstydu</button>
+                    <button class="tech-tab-btn" data-tech="guilt">Regulacja poczucia winy</button>
+                    <button class="tech-tab-btn" data-tech="transform">Transformacja wstyd → wina</button>
+                </div>
+
+                <div id="shame-techniques" class="tech-content active">
+                    <div class="technique-steps">
+                        <div class="step">
+                            <h4>1. Nazwij emocję</h4>
+                            <p>"Czuję wstyd, bo..."</p>
+                        </div>
+                        <div class="step">
+                            <h4>2. Zatrzymaj się i oddychaj</h4>
+                            <p>Zrób kilka głębokich oddechów, zanim zareagujesz</p>
+                        </div>
+                        <div class="step">
+                            <h4>3. Praktykuj współczucie dla siebie</h4>
+                            <p>Zadaj sobie pytanie: "Co powiedziałbym przyjacielowi w tej sytuacji?"</p>
+                        </div>
+                        <div class="step">
+                            <h4>4. Znajdź zaufaną osobę</h4>
+                            <p>Wstyd słabnie, gdy jest dzielony z empatyczną osobą</p>
+                        </div>
+                        <div class="step">
+                            <h4>5. Kwestionuj globalne osądy</h4>
+                            <p>Przejdź od "Jestem zły" do "Zrobiłem coś, czego żałuję"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="guilt-techniques" class="tech-content">
+                    <div class="technique-steps">
+                        <div class="step">
+                            <h4>1. Sprawdź fakty vs przekonania</h4>
+                            <p>Oddziel to, co się naprawdę wydarzyło od swojej interpretacji</p>
+                        </div>
+                        <div class="step">
+                            <h4>2. Określ możliwość naprawy</h4>
+                            <p>Zadaj pytanie: "Co mogę zrobić, żeby to naprawić?"</p>
+                        </div>
+                        <div class="step">
+                            <h4>3. Przeproś, jeśli to uzasadnione</h4>
+                            <p>Składaj szczere przeprosiny bez usprawiedliwień</p>
+                        </div>
+                        <div class="step">
+                            <h4>4. Wyciągnij wnioski</h4>
+                            <p>Naucz się czegoś na przyszłość z tej sytuacji</p>
+                        </div>
+                        <div class="step">
+                            <h4>5. Zastąp samokrytykę działaniem</h4>
+                            <p>Skup się na tym, co możesz zrobić teraz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="transform-techniques" class="tech-content">
+                    <div class="transform-steps">
+                        <h4>Jak zamienić wstyd w poczucie winy:</h4>
+                        <ol>
+                            <li>Przejdź od "jestem zły" do "zrobiłem coś złego"</li>
+                            <li>Skup się na konkretnym zachowaniu, nie na całej osobie</li>
+                            <li>Zadaj pytanie: "Co mogę naprawić?" zamiast "Dlaczego jestem taki?"</li>
+                            <li>Praktykuj samoakceptację przy jednoczesnej odpowiedzialności</li>
+                            <li>Używaj języka zachowań: "Gdy robiłem X..." zamiast "Jestem osobą, która..."</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises" class="section">
+            <h2>Interaktywne ćwiczenia</h2>
+            
+            <div class="exercises-grid">
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>📝 Dziennik wstydu</h3>
+                        <p>Codzienny dziennik do śledzenia swoich doświadczeń wstydu</p>
+                        <button class="btn btn--primary" onclick="openJournal()">Rozpocznij dziennik</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>🔍 Sprawdzanie faktów</h3>
+                        <p>Interaktywne ćwiczenie oddzielania faktów od interpretacji</p>
+                        <button class="btn btn--primary" onclick="openFactCheck()">Sprawdź fakty</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>💭 Generator afirmacji</h3>
+                        <p>Personalizowane pozytywne komunikaty do siebie</p>
+                        <button class="btn btn--primary" onclick="generateAffirmation()">Generuj afirmację</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>👥 Rozmowa z przyjacielem</h3>
+                        <p>Ćwiczenie zmiany perspektywy przez współczucie</p>
+                        <button class="btn btn--primary" onclick="openFriendTalk()">Rozpocznij rozmowę</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal Modal -->
+            <div id="journal-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('journal-modal')">&times;</span>
+                    <h3>Dziennik wstydu</h3>
+                    <form id="journal-form">
+                        <div class="form-group">
+                            <label class="form-label">Co się wydarzyło?</label>
+                            <textarea class="form-control" name="situation" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co wywołało wstyd?</label>
+                            <textarea class="form-control" name="trigger" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Gdzie poczułem to w ciele?</label>
+                            <textarea class="form-control" name="body" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co mówiłem sobie?</label>
+                            <textarea class="form-control" name="thoughts" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Jak zareagowałem?</label>
+                            <textarea class="form-control" name="reaction" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co powiedziałbym przyjacielowi w tej sytuacji?</label>
+                            <textarea class="form-control" name="friend" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Intensywność (1-10):</label>
+                            <input type="number" class="form-control" name="intensity" min="1" max="10" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Zapisz wpis</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Affirmation Modal -->
+            <div id="affirmation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('affirmation-modal')">&times;</span>
+                    <h3>Twoja afirmacja</h3>
+                    <div id="affirmation-text" class="affirmation-display"></div>
+                    <button class="btn btn--secondary" onclick="generateAffirmation()">Nowa afirmacja</button>
+                </div>
+            </div>
+
+            <!-- Friend Talk Modal -->
+            <div id="friend-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('friend-modal')">&times;</span>
+                    <h3>Rozmowa z empatycznym przyjacielem</h3>
+                    <div id="friend-conversation" class="conversation">
+                        <div class="conversation-step">
+                            <p><strong>Przyjaciel:</strong> Opowiedz mi, co się stało. Słucham bez osądzania.</p>
+                            <textarea id="friend-situation" class="form-control" placeholder="Opisz swoją sytuację..."></textarea>
+                            <button class="btn btn--primary" onclick="friendResponse()">Podziel się</button>
+                        </div>
+                        <div id="friend-response" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Section -->
+        <section id="audio" class="section">
+            <h2>Nagrania audio</h2>
+            
+            <div class="audio-grid">
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>🧘‍♀️ Medytacja uważności na wstyd</h3>
+                        <p>10-minutowa medytacja pomagająca w pracy ze wstydem</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('meditation')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="meditation-progress"></div>
+                            </div>
+                            <span class="audio-time">10:00</span>
+                        </div>
+                        <div class="audio-transcript">
+                            <h4>Transkrypcja:</h4>
+                            <p>Znajdź wygodną pozycję i zamknij oczy... Zrób kilka głębokich oddechów... Jeśli pojawia się uczucie wstydu, po prostu je zauważ... Nie próbuj go zmieniać ani przepędzić... Obserwuj, gdzie czujesz go w ciele... Powiedz sobie łagodnie: 'To tylko emocja, przejdzie'... Wyślij sobie współczucie, jakbyś wysyłał je przyjacielowi...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>🌬️ Ćwiczenie oddechowe 4-7-8</h3>
+                        <p>Technika oddechowa do regulacji intensywnych emocji</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('breathing')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="breathing-progress"></div>
+                            </div>
+                            <span class="audio-time">5:00</span>
+                        </div>
+                        <div class="breathing-guide">
+                            <h4>Instrukcja:</h4>
+                            <ol>
+                                <li>Wdech przez nos przez 4 sekundy</li>
+                                <li>Wstrzymaj oddech na 7 sekund</li>
+                                <li>Wydech przez usta przez 8 sekund</li>
+                                <li>Powtórz 4 razy</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>💚 Relaksacja dla poczucia winy</h3>
+                        <p>Ćwiczenie uwalniania napięć związanych z poczuciem winy</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('guilt-release')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="guilt-release-progress"></div>
+                            </div>
+                            <span class="audio-time">8:00</span>
+                        </div>
+                        <div class="audio-transcript">
+                            <h4>Transkrypcja:</h4>
+                            <p>Usiądź wygodnie i zrób kilka głębokich oddechów... Pomyśl o sytuacji, która wywołuje poczucie winy... Zadaj sobie pytania: Co się naprawdę wydarzyło? Czy mogę to naprawić? Jeśli tak - zaplanuj konkretne działania... Jeśli nie - pozwól sobie na wybaczenie... Powtarzaj: 'Jestem człowiekiem, popełniam błędy i mogę się uczyć'...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>✨ Afirmacje współczucia</h3>
+                        <p>Pozytywne komunikaty do siebie w trudnych momentach</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('affirmations')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="affirmations-progress"></div>
+                            </div>
+                            <span class="audio-time">6:00</span>
+                        </div>
+                        <div class="affirmations-list">
+                            <h4>Przykładowe afirmacje:</h4>
+                            <ul>
+                                <li>Jestem człowiekiem i mam prawo do błędów</li>
+                                <li>Mogę się uczyć i rosnąć dzięki swoim doświadczeniom</li>
+                                <li>Zasługuję na współczucie, zwłaszcza od siebie</li>
+                                <li>Moja wartość nie zależy od moich błędów</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
