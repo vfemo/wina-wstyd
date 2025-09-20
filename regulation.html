@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulacja - Wstyd vs Poczucie Winy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Wstyd vs Poczucie Winy</h1>
+            <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Start</a>
+                <a href="differences.html" class="nav-btn">Różnice</a>
+                <a href="assessment.html" class="nav-btn">Ocena</a>
+                <a href="regulation.html" class="nav-btn active">Regulacja</a>
+                <a href="exercises.html" class="nav-btn">Ćwiczenia</a>
+                <a href="audio.html" class="nav-btn">Audio</a>
+            </nav>
+        </header>
+
+        <!-- Regulation Section -->
+        <section id="regulation" class="section active">
+            <h2>Regulacja emocji</h2>
+            
+            <div class="regulation-guide">
+                <div class="when-regulate card">
+                    <div class="card__body">
+                        <h3>Kiedy regulować emocje?</h3>
+                        <ul>
+                            <li>Gdy są zbyt intensywne i paraliżują</li>
+                            <li>Gdy prowadzą do destrukcyjnych zachowań</li>
+                            <li>Gdy nie motywują do naprawy, tylko do samobiczowania</li>
+                            <li>Gdy jesteś poza strefą tolerancji</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="when-listen card">
+                    <div class="card__body">
+                        <h3>Kiedy słuchać emocji?</h3>
+                        <ul>
+                            <li>Gdy są proporcjonalne i motywują do naprawy</li>
+                            <li>Gdy można bezpiecznie je przeżyć</li>
+                            <li>Gdy dostarczają ważnych informacji</li>
+                            <li>Gdy prowadzą do konstruktywnych działań</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="techniques-section">
+                <h3>Techniki regulacji</h3>
+                <div class="techniques-tabs">
+                    <button class="tech-tab-btn active" data-tech="shame">Regulacja wstydu</button>
+                    <button class="tech-tab-btn" data-tech="guilt">Regulacja poczucia winy</button>
+                    <button class="tech-tab-btn" data-tech="transform">Transformacja wstyd → wina</button>
+                </div>
+
+                <div id="shame-techniques" class="tech-content active">
+                    <div class="technique-steps">
+                        <div class="step">
+                            <h4>1. Nazwij emocję</h4>
+                            <p>"Czuję wstyd, bo..."</p>
+                        </div>
+                        <div class="step">
+                            <h4>2. Zatrzymaj się i oddychaj</h4>
+                            <p>Zrób kilka głębokich oddechów, zanim zareagujesz</p>
+                        </div>
+                        <div class="step">
+                            <h4>3. Praktykuj współczucie dla siebie</h4>
+                            <p>Zadaj sobie pytanie: "Co powiedziałbym przyjacielowi w tej sytuacji?"</p>
+                        </div>
+                        <div class="step">
+                            <h4>4. Znajdź zaufaną osobę</h4>
+                            <p>Wstyd słabnie, gdy jest dzielony z empatyczną osobą</p>
+                        </div>
+                        <div class="step">
+                            <h4>5. Kwestionuj globalne osądy</h4>
+                            <p>Przejdź od "Jestem zły" do "Zrobiłem coś, czego żałuję"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="guilt-techniques" class="tech-content">
+                    <div class="technique-steps">
+                        <div class="step">
+                            <h4>1. Sprawdź fakty vs przekonania</h4>
+                            <p>Oddziel to, co się naprawdę wydarzyło od swojej interpretacji</p>
+                        </div>
+                        <div class="step">
+                            <h4>2. Określ możliwość naprawy</h4>
+                            <p>Zadaj pytanie: "Co mogę zrobić, żeby to naprawić?"</p>
+                        </div>
+                        <div class="step">
+                            <h4>3. Przeproś, jeśli to uzasadnione</h4>
+                            <p>Składaj szczere przeprosiny bez usprawiedliwień</p>
+                        </div>
+                        <div class="step">
+                            <h4>4. Wyciągnij wnioski</h4>
+                            <p>Naucz się czegoś na przyszłość z tej sytuacji</p>
+                        </div>
+                        <div class="step">
+                            <h4>5. Zastąp samokrytykę działaniem</h4>
+                            <p>Skup się na tym, co możesz zrobić teraz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="transform-techniques" class="tech-content">
+                    <div class="transform-steps">
+                        <h4>Jak zamienić wstyd w poczucie winy:</h4>
+                        <ol>
+                            <li>Przejdź od "jestem zły" do "zrobiłem coś złego"</li>
+                            <li>Skup się na konkretnym zachowaniu, nie na całej osobie</li>
+                            <li>Zadaj pytanie: "Co mogę naprawić?" zamiast "Dlaczego jestem taki?"</li>
+                            <li>Praktykuj samoakceptację przy jednoczesnej odpowiedzialności</li>
+                            <li>Używaj języka zachowań: "Gdy robiłem X..." zamiast "Jestem osobą, która..."</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

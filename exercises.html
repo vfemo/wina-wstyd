@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ćwiczenia - Wstyd vs Poczucie Winy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Wstyd vs Poczucie Winy</h1>
+            <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Start</a>
+                <a href="differences.html" class="nav-btn">Różnice</a>
+                <a href="assessment.html" class="nav-btn">Ocena</a>
+                <a href="regulation.html" class="nav-btn">Regulacja</a>
+                <a href="exercises.html" class="nav-btn active">Ćwiczenia</a>
+                <a href="audio.html" class="nav-btn">Audio</a>
+            </nav>
+        </header>
+
+        <!-- Exercises Section -->
+        <section id="exercises" class="section active">
+            <h2>Interaktywne ćwiczenia</h2>
+            
+            <div class="exercises-grid">
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>📝 Dziennik wstydu</h3>
+                        <p>Codzienny dziennik do śledzenia swoich doświadczeń wstydu</p>
+                        <button class="btn btn--primary" onclick="openJournal()">Rozpocznij dziennik</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>🔍 Sprawdzanie faktów</h3>
+                        <p>Interaktywne ćwiczenie oddzielania faktów od interpretacji</p>
+                        <button class="btn btn--primary" onclick="window.location.href='assessment.html#justified'">Sprawdź fakty</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>💭 Generator afirmacji</h3>
+                        <p>Personalizowane pozytywne komunikaty do siebie</p>
+                        <button class="btn btn--primary" onclick="generateAffirmation()">Generuj afirmację</button>
+                    </div>
+                </div>
+                
+                <div class="exercise-card card">
+                    <div class="card__body">
+                        <h3>👥 Rozmowa z przyjacielem</h3>
+                        <p>Ćwiczenie zmiany perspektywy przez współczucie</p>
+                        <button class="btn btn--primary" onclick="openFriendTalk()">Rozpocznij rozmowę</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal Modal -->
+            <div id="journal-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('journal-modal')">&times;</span>
+                    <h3>Dziennik wstydu</h3>
+                    <form id="journal-form">
+                        <div class="form-group">
+                            <label class="form-label">Co się wydarzyło?</label>
+                            <textarea class="form-control" name="situation" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co wywołało wstyd?</label>
+                            <textarea class="form-control" name="trigger" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Gdzie poczułem to w ciele?</label>
+                            <textarea class="form-control" name="body" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co mówiłem sobie?</label>
+                            <textarea class="form-control" name="thoughts" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Jak zareagowałem?</label>
+                            <textarea class="form-control" name="reaction" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Co powiedziałbym przyjacielowi w tej sytuacji?</label>
+                            <textarea class="form-control" name="friend" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Intensywność (1-10):</label>
+                            <input type="number" class="form-control" name="intensity" min="1" max="10" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Zapisz wpis</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Affirmation Modal -->
+            <div id="affirmation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('affirmation-modal')">&times;</span>
+                    <h3>Twoja afirmacja</h3>
+                    <div id="affirmation-text" class="affirmation-display"></div>
+                    <button class="btn btn--secondary" onclick="generateAffirmation()">Nowa afirmacja</button>
+                </div>
+            </div>
+
+            <!-- Friend Talk Modal -->
+            <div id="friend-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('friend-modal')">&times;</span>
+                    <h3>Rozmowa z empatycznym przyjacielem</h3>
+                    <div id="friend-conversation" class="conversation">
+                        <div class="conversation-step">
+                            <p><strong>Przyjaciel:</strong> Opowiedz mi, co się stało. Słucham bez osądzania.</p>
+                            <textarea id="friend-situation" class="form-control" placeholder="Opisz swoją sytuację..."></textarea>
+                            <button class="btn btn--primary" onclick="friendResponse()">Podziel się</button>
+                        </div>
+                        <div id="friend-response" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

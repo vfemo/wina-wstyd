@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - Wstyd vs Poczucie Winy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Wstyd vs Poczucie Winy</h1>
+            <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Start</a>
+                <a href="differences.html" class="nav-btn">Różnice</a>
+                <a href="assessment.html" class="nav-btn">Ocena</a>
+                <a href="regulation.html" class="nav-btn">Regulacja</a>
+                <a href="exercises.html" class="nav-btn">Ćwiczenia</a>
+                <a href="audio.html" class="nav-btn active">Audio</a>
+            </nav>
+        </header>
+
+        <!-- Audio Section -->
+        <section id="audio" class="section active">
+            <h2>Nagrania audio</h2>
+            
+            <div class="audio-grid">
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>🧘‍♀️ Medytacja uważności na wstyd</h3>
+                        <p>10-minutowa medytacja pomagająca w pracy ze wstydem</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('meditation')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="meditation-progress"></div>
+                            </div>
+                            <span class="audio-time">10:00</span>
+                        </div>
+                        <div class="audio-transcript">
+                            <h4>Transkrypcja:</h4>
+                            <p>Znajdź wygodną pozycję i zamknij oczy... Zrób kilka głębokich oddechów... Jeśli pojawia się uczucie wstydu, po prostu je zauważ... Nie próbuj go zmieniać ani przepędzić... Obserwuj, gdzie czujesz go w ciele... Powiedz sobie łagodnie: 'To tylko emocja, przejdzie'... Wyślij sobie współczucie, jakbyś wysyłał je przyjacielowi...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>🌬️ Ćwiczenie oddechowe 4-7-8</h3>
+                        <p>Technika oddechowa do regulacji intensywnych emocji</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('breathing')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="breathing-progress"></div>
+                            </div>
+                            <span class="audio-time">5:00</span>
+                        </div>
+                        <div class="breathing-guide">
+                            <h4>Instrukcja:</h4>
+                            <ol>
+                                <li>Wdech przez nos przez 4 sekundy</li>
+                                <li>Wstrzymaj oddech na 7 sekund</li>
+                                <li>Wydech przez usta przez 8 sekund</li>
+                                <li>Powtórz 4 razy</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>💚 Relaksacja dla poczucia winy</h3>
+                        <p>Ćwiczenie uwalniania napięć związanych z poczuciem winy</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('guilt-release')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="guilt-release-progress"></div>
+                            </div>
+                            <span class="audio-time">8:00</span>
+                        </div>
+                        <div class="audio-transcript">
+                            <h4>Transkrypcja:</h4>
+                            <p>Usiądź wygodnie i zrób kilka głębokich oddechów... Pomyśl o sytuacji, która wywołuje poczucie winy... Zadaj sobie pytania: Co się naprawdę wydarzyło? Czy mogę to naprawić? Jeśli tak - zaplanuj konkretne działania... Jeśli nie - pozwól sobie na wybaczenie... Powtarzaj: 'Jestem człowiekiem, popełniam błędy i mogę się uczyć'...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-item card">
+                    <div class="card__body">
+                        <h3>✨ Afirmacje współczucia</h3>
+                        <p>Pozytywne komunikaty do siebie w trudnych momentach</p>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('affirmations')">▶️ Odtwórz</button>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="affirmations-progress"></div>
+                            </div>
+                            <span class="audio-time">6:00</span>
+                        </div>
+                        <div class="affirmations-list">
+                            <h4>Przykładowe afirmacje:</h4>
+                            <ul>
+                                <li>Jestem człowiekiem i mam prawo do błędów</li>
+                                <li>Mogę się uczyć i rosnąć dzięki swoim doświadczeniom</li>
+                                <li>Zasługuję na współczucie, zwłaszcza od siebie</li>
+                                <li>Moja wartość nie zależy od moich błędów</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
