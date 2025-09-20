@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocena - Wstyd vs Poczucie Winy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Wstyd vs Poczucie Winy</h1>
+            <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Start</a>
+                <a href="differences.html" class="nav-btn">Różnice</a>
+                <a href="assessment.html" class="nav-btn active">Ocena</a>
+                <a href="regulation.html" class="nav-btn">Regulacja</a>
+                <a href="exercises.html" class="nav-btn">Ćwiczenia</a>
+                <a href="audio.html" class="nav-btn">Audio</a>
+            </nav>
+        </header>
+
+        <!-- Assessment Section -->
+        <section id="assessment" class="section active">
+            <h2>Ocena emocji</h2>
+            
+            <div class="assessment-tabs">
+                <button class="tab-btn active" data-tab="vulnerability">Test podatności</button>
+                <button class="tab-btn" data-tab="justified">Czy emocja jest uzasadniona?</button>
+                <button class="tab-btn" data-tab="intensity">Kalkulator intensywności</button>
+            </div>
+
+            <!-- Vulnerability Test -->
+            <div id="vulnerability" class="tab-content active">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Test podatności na wstyd</h3>
+                        <p>Odpowiedz na poniższe pytania, oceniając każde w skali 1-5:</p>
+                        <div class="vulnerability-test">
+                            <div id="vulnerability-questions"></div>
+                            <button class="btn btn--primary" onclick="calculateVulnerability()">Oblicz wynik</button>
+                            <div id="vulnerability-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Justified Assessment -->
+            <div id="justified" class="tab-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Sprawdzanie uzasadnienia emocji</h3>
+                        <div class="fact-check-tool">
+                            <h4>Krok 1: Opisz sytuację</h4>
+                            <textarea id="situation-description" class="form-control" placeholder="Opisz co się wydarzyło używając tylko faktów (co można by nagrać kamerą)..."></textarea>
+                            
+                            <h4>Krok 2: Zapisz swoje myśli</h4>
+                            <textarea id="thoughts-description" class="form-control" placeholder="Jakie myśli przychodzą ci do głowy? Jakie interpretacje robisz?"></textarea>
+                            
+                            <h4>Krok 3: Zadaj sobie pytania kontrolne</h4>
+                            <div class="control-questions">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q1"> Czy używam słów "zawsze", "nigdy", "muszę"?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q2"> Czy to globalny osąd o mnie jako osobie?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q3"> Czy wynika to ze starych przekonań rodzinnych?
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="q4"> Czy ktoś realnie ucierpiał?
+                                </label>
+                            </div>
+                            
+                            <button class="btn btn--primary" onclick="analyzeJustification()">Przeanalizuj</button>
+                            <div id="justification-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intensity Calculator -->
+            <div id="intensity" class="tab-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Kalkulator intensywności emocji</h3>
+                        <div class="intensity-tool">
+                            <label class="form-label">Jak intensywnie czujesz tę emocję? (1-10)</label>
+                            <input type="range" id="intensity-slider" class="intensity-slider" min="1" max="10" value="5">
+                            <div class="intensity-value" id="intensity-value">5</div>
+                            
+                            <label class="form-label">Rodzaj emocji:</label>
+                            <select id="emotion-type" class="form-control">
+                                <option value="shame">Wstyd</option>
+                                <option value="guilt">Poczucie winy</option>
+                            </select>
+                            
+                            <button class="btn btn--primary" onclick="calculateIntensity()">Oceń intensywność</button>
+                            <div id="intensity-result" class="result-card" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
