@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wstyd vs Poczucie Winy - Podgląd</title>
+  <style>
+/* ===== style.css (inlined) ===== */
+:root {
+  /* Colors */
+  --color-background: rgba(252, 252, 249, 1);
+  --color-surface: rgba(255, 255, 253, 1);
+  --color-text: rgba(19, 52, 59, 1);
+  --color-text-secondary: rgba(98, 108, 113, 1);
+  --color-primary: rgba(33, 128, 141, 1);
+  --color-primary-hover: rgba(29, 116, 128, 1);
+  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-secondary: rgba(94, 82, 64, 0.12);
+  --color-secondary-hover: rgba(94, 82, 64, 0.2);
+  --color-secondary-active: rgba(94, 82, 64, 0.25);
+  --color-border: rgba(94, 82, 64, 0.2);
+  --color-btn-primary-text: rgba(252, 252, 249, 1);
+  --color-card-border: rgba(94, 82, 64, 0.12);
+  --color-card-border-inner: rgba(94, 82, 64, 0.12);
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: rgba(33, 128, 141, 1);
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-select-caret: rgba(19, 52, 59, 0.8);
+
+  /* Common style patterns */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  /* RGB versions for opacity control */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+
+  /* Typography */
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: rgba(31, 33, 33, 1);
+    --color-surface: rgba(38, 40, 40, 1);
+    --color-text: rgba(245, 245, 245, 1);
+    --color-text-secondary: rgba(167, 169, 169, 0.7);
+    --color-primary: rgba(50, 184, 198, 1);
+    --color-primary-hover: rgba(45, 166, 178, 1);
+    --color-primary-active: rgba(41, 150, 161, 1);
+    --color-secondary: rgba(119, 124, 124, 0.15);
+    --color-secondary-hover: rgba(119, 124, 124, 0.25);
+    --color-secondary-active: rgba(119, 124, 124, 0.3);
+    --color-border: rgba(119, 124, 124, 0.3);
+    --color-error: rgba(255, 84, 89, 1);
+    --color-success: rgba(50, 184, 198, 1);
+    --color-warning: rgba(230, 129, 97, 1);
+    --color-info: rgba(167, 169, 169, 1);
+    --color-focus-ring: rgba(50, 184, 198, 0.4);
+    --color-btn-primary-text: rgba(19, 52, 59, 1);
+    --color-card-border: rgba(119, 124, 124, 0.2);
+    --color-card-border-inner: rgba(119, 124, 124, 0.15);
+    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    --button-border-secondary: rgba(119, 124, 124, 0.2);
+    --color-border-secondary: rgba(119, 124, 124, 0.2);
+    --color-select-caret: rgba(245, 245, 245, 0.8);
+
+    --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    --focus-outline: 2px solid var(--color-primary);
+    --status-bg-opacity: 0.15;
+    --status-border-opacity: 0.25;
+    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    --color-success-rgb: 50, 184, 198;
+    --color-error-rgb: 255, 84, 89;
+    --color-warning-rgb: 230, 129, 97;
+    --color-info-rgb: 167, 169, 169;
+  }
+}
+
+[data-color-scheme="dark"] {
+  --color-background: rgba(31, 33, 33, 1);
+  --color-surface: rgba(38, 40, 40, 1);
+  --color-text: rgba(245, 245, 245, 1);
+  --color-text-secondary: rgba(167, 169, 169, 0.7);
+  --color-primary: rgba(50, 184, 198, 1);
+  --color-primary-hover: rgba(45, 166, 178, 1);
+  --color-primary-active: rgba(41, 150, 161, 1);
+  --color-secondary: rgba(119, 124, 124, 0.15);
+  --color-secondary-hover: rgba(119, 124, 124, 0.25);
+  --color-secondary-active: rgba(119, 124, 124, 0.3);
+  --color-border: rgba(119, 124, 124, 0.3);
+  --color-error: rgba(255, 84, 89, 1);
+  --color-success: rgba(50, 184, 198, 1);
+  --color-warning: rgba(230, 129, 97, 1);
+  --color-info: rgba(167, 169, 169, 1);
+  --color-focus-ring: rgba(50, 184, 198, 0.4);
+  --color-btn-primary-text: rgba(19, 52, 59, 1);
+  --color-card-border: rgba(119, 124, 124, 0.15);
+  --color-card-border-inner: rgba(119, 124, 124, 0.15);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --color-border-secondary: rgba(119, 124, 124, 0.2);
+  --color-select-caret: rgba(245, 245, 245, 0.8);
+
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  --color-success-rgb: 50, 184, 198;
+  --color-error-rgb: 255, 84, 89;
+  --color-warning-rgb: 230, 129, 97;
+  --color-info-rgb: 167, 169, 169;
+}
+
+[data-color-scheme="light"] {
+  --color-background: rgba(252, 252, 249, 1);
+  --color-surface: rgba(255, 255, 253, 1);
+  --color-text: rgba(19, 52, 59, 1);
+  --color-text-secondary: rgba(98, 108, 113, 1);
+  --color-primary: rgba(33, 128, 141, 1);
+  --color-primary-hover: rgba(29, 116, 128, 1);
+  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-secondary: rgba(94, 82, 64, 0.12);
+  --color-secondary-hover: rgba(94, 82, 64, 0.2);
+  --color-secondary-active: rgba(94, 82, 64, 0.25);
+  --color-border: rgba(94, 82, 64, 0.2);
+  --color-btn-primary-text: rgba(252, 252, 249, 1);
+  --color-card-border: rgba(94, 82, 64, 0.12);
+  --color-card-border-inner: rgba(94, 82, 64, 0.12);
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: rgba(33, 128, 141, 1);
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+  --color-focus-ring: rgba(33, 128, 141, 0.4);
+
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+}
+
+html { font-size: var(--font-size-base); font-family: var(--font-family-base); line-height: var(--line-height-normal); color: var(--color-text); background-color: var(--color-background); -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+body { margin: 0; padding: 0; }
+*,*::before,*::after { box-sizing: inherit; }
+
+h1,h2,h3,h4,h5,h6 { margin: 0; font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); color: var(--color-text); letter-spacing: var(--letter-spacing-tight); }
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-md); }
+
+p { margin: 0 0 var(--space-16) 0; }
+a { color: var(--color-primary); text-decoration: none; transition: color var(--duration-fast) var(--ease-standard); }
+a:hover { color: var(--color-primary-hover); }
+
+code,pre { font-family: var(--font-family-mono); font-size: calc(var(--font-size-base) * 0.95); background-color: var(--color-secondary); border-radius: var(--radius-sm); }
+code { padding: var(--space-1) var(--space-4); }
+pre { padding: var(--space-16); margin: var(--space-16) 0; overflow: auto; border: 1px solid var(--color-border); }
+pre code { background: none; padding: 0; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--space-8) var(--space-16); border-radius: var(--radius-base); font-size: var(--font-size-base); font-weight: 500; line-height: 1.5; cursor: pointer; transition: all var(--duration-normal) var(--ease-standard); border: none; text-decoration: none; position: relative; }
+.btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.btn--primary { background: var(--color-primary); color: var(--color-btn-primary-text); }
+.btn--primary:hover { background: var(--color-primary-hover); }
+.btn--primary:active { background: var(--color-primary-active); }
+.btn--secondary { background: var(--color-secondary); color: var(--color-text); }
+.btn--secondary:hover { background: var(--color-secondary-hover); }
+.btn--secondary:active { background: var(--color-secondary-active); }
+.btn--outline { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); }
+.btn--outline:hover { background: var(--color-secondary); }
+.btn--sm { padding: var(--space-4) var(--space-12); font-size: var(--font-size-sm); border-radius: var(--radius-sm); }
+.btn--lg { padding: var(--space-10) var(--space-20); font-size: var(--font-size-lg); border-radius: var(--radius-md); }
+.btn--full-width { width: 100%; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.form-control { display: block; width: 100%; padding: var(--space-8) var(--space-12); font-size: var(--font-size-md); line-height: 1.5; color: var(--color-text); background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-base); transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard); }
+textarea.form-control { font-family: var(--font-family-base); font-size: var(--font-size-base); }
+select.form-control { padding: var(--space-8) var(--space-12); appearance: none; background-image: var(--select-caret-light); background-repeat: no-repeat; background-position: right var(--space-12) center; background-size: 16px; padding-right: var(--space-32); }
+@media (prefers-color-scheme: dark) { select.form-control { background-image: var(--select-caret-dark); } }
+[data-color-scheme="dark"] select.form-control { background-image: var(--select-caret-dark); }
+[data-color-scheme="light"] select.form-control { background-image: var(--select-caret-light); }
+.form-control:focus { border-color: var(--color-primary); outline: var(--focus-outline); }
+.form-label { display: block; margin-bottom: var(--space-8); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm); }
+.form-group { margin-bottom: var(--space-16); }
+
+.card { background-color: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm); overflow: hidden; transition: box-shadow var(--duration-normal) var(--ease-standard); }
+.card:hover { box-shadow: var(--shadow-md); }
+.card__body { padding: var(--space-16); }
+.card__header,.card__footer { padding: var(--space-16); border-bottom: 1px solid var(--color-card-border-inner); }
+
+.status { display: inline-flex; align-items: center; padding: var(--space-6) var(--space-12); border-radius: var(--radius-full); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm); }
+.status--success { background-color: rgba(var(--color-success-rgb, 33, 128, 141), var(--status-bg-opacity)); color: var(--color-success); border: 1px solid rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity)); }
+.status--error { background-color: rgba(var(--color-error-rgb, 192, 21, 47), var(--status-bg-opacity)); color: var(--color-error); border: 1px solid rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity)); }
+.status--warning { background-color: rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-bg-opacity)); color: var(--color-warning); border: 1px solid rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity)); }
+.status--info { background-color: rgba(var(--color-info-rgb, 98, 108, 113), var(--status-bg-opacity)); color: var(--color-info); border: 1px solid rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity)); }
+
+.container { width: 100%; margin-right: auto; margin-left: auto; padding-right: var(--space-16); padding-left: var(--space-16); }
+@media (min-width: 640px) { .container { max-width: var(--container-sm); } }
+@media (min-width: 768px) { .container { max-width: var(--container-md); } }
+@media (min-width: 1024px) { .container { max-width: var(--container-lg); } }
+@media (min-width: 1280px) { .container { max-width: var(--container-xl); } }
+
+.flex { display: flex; } .flex-col { flex-direction: column; } .items-center { align-items: center; } .justify-center { justify-content: center; } .justify-between { justify-content: space-between; }
+.gap-4 { gap: var(--space-4); } .gap-8 { gap: var(--space-8); } .gap-16 { gap: var(--space-16); }
+.m-0 { margin: 0; } .mt-8 { margin-top: var(--space-8); } .mb-8 { margin-bottom: var(--space-8); } .mx-8 { margin-left: var(--space-8); margin-right: var(--space-8); } .my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
+.p-0 { padding: 0; } .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); } .px-8 { padding-left: var(--space-8); padding-right: var(--space-8); } .py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); } .px-16 { padding-left: var(--space-16); padding-right: var(--space-16); }
+.block { display: block; } .hidden { display: none; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+:focus-visible { outline: var(--focus-outline); outline-offset: 2px; }
+
+[data-color-scheme="dark"] .btn--outline { border: 1px solid var(--color-border-secondary); }
+
+@font-face { font-family: 'FKGroteskNeue'; src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2'); }
+
+.header { text-align: center; padding: var(--space-32) 0; background: linear-gradient(135deg, var(--color-primary) 0%, #4a9ead 100%); color: var(--color-btn-primary-text); margin-bottom: var(--space-32); border-radius: var(--radius-lg); }
+.header h1 { font-size: var(--font-size-4xl); margin-bottom: var(--space-8); color: var(--color-btn-primary-text); }
+.header-subtitle { font-size: var(--font-size-lg); opacity: 0.9; margin-bottom: var(--space-24); }
+.main-nav { display: flex; justify-content: center; gap: var(--space-8); flex-wrap: wrap; }
+.nav-btn { background: rgba(255, 255, 255, 0.2); color: var(--color-btn-primary-text); border: 1px solid rgba(255, 255, 255, 0.3); padding: var(--space-8) var(--space-16); border-radius: var(--radius-base); cursor: pointer; transition: all var(--duration-normal) var(--ease-standard); font-weight: var(--font-weight-medium); }
+.nav-btn:hover { background: rgba(255, 255, 255, 0.3); }
+.nav-btn.active { background: var(--color-btn-primary-text); color: var(--color-primary); }
+
+.section { display: none; margin-bottom: var(--space-32); }
+.section.active { display: block; }
+.section h2 { font-size: var(--font-size-3xl); margin-bottom: var(--space-24); text-align: center; color: var(--color-primary); }
+
+.intro-card { margin-bottom: var(--space-24); }
+.quick-start { margin-top: var(--space-24); padding: var(--space-20); background: var(--color-secondary); border-radius: var(--radius-base); }
+.quick-actions { display: flex; gap: var(--space-12); margin-top: var(--space-16); flex-wrap: wrap; }
+
+.overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-20); margin-top: var(--space-24); }
+.overview-item h3 { font-size: var(--font-size-xl); margin-bottom: var(--space-12); }
+
+.comparison-table { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--color-border); border-radius: var(--radius-base); overflow: hidden; margin-bottom: var(--space-32); }
+.comparison-header { display: contents; }
+.comparison-header .comparison-cell { font-weight: var(--font-weight-bold); background: var(--color-primary); color: var(--color-btn-primary-text); }
+.comparison-row { display: contents; }
+.comparison-cell { padding: var(--space-12); background: var(--color-surface); }
+.comparison-cell.aspect { font-weight: var(--font-weight-semibold); background: var(--color-secondary); }
+.comparison-cell.shame { border-left: 4px solid #ff6b6b; }
+.comparison-cell.guilt { border-left: 4px solid #4ecdc4; }
+
+.examples-section { margin-top: var(--space-32); }
+.examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-20); margin-top: var(--space-20); }
+.example-card h4 { color: var(--color-primary); margin-bottom: var(--space-12); }
+.example-card p { margin-bottom: var(--space-8); font-size: var(--font-size-sm); }
+
+.assessment-tabs { display: flex; gap: var(--space-4); margin-bottom: var(--space-24); border-bottom: 2px solid var(--color-border); flex-wrap: wrap; }
+.tab-btn { background: none; border: none; padding: var(--space-12) var(--space-16); cursor: pointer; border-bottom: 2px solid transparent; transition: all var(--duration-normal) var(--ease-standard); font-weight: var(--font-weight-medium); color: var(--color-text-secondary); }
+.tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.vulnerability-test { max-width: 600px; }
+.question-item { display: flex; justify-content: space-between; align-items: center; padding: var(--space-12); margin-bottom: var(--space-8); background: var(--color-secondary); border-radius: var(--radius-base); }
+.question-text { flex: 1; margin-right: var(--space-16); }
+.rating-buttons { display: flex; gap: var(--space-4); }
+.rating-btn { width: 32px; height: 32px; border: 2px solid var(--color-border); background: var(--color-surface); border-radius: 50%; cursor: pointer; transition: all var(--duration-fast) var(--ease-standard); font-weight: var(--font-weight-medium); }
+.rating-btn:hover { border-color: var(--color-primary); }
+.rating-btn.selected { background: var(--color-primary); color: var(--color-btn-primary-text); border-color: var(--color-primary); }
+.result-card { margin-top: var(--space-20); padding: var(--space-16); border-radius: var(--radius-base); border-left: 4px solid var(--color-primary); background: var(--color-secondary); }
+
+.fact-check-tool { max-width: 700px; }
+.fact-check-tool h4 { margin: var(--space-20) 0 var(--space-8) 0; color: var(--color-primary); }
+.control-questions { margin: var(--space-16) 0; }
+.checkbox-label { display: block; margin-bottom: var(--space-8); cursor: pointer; padding: var(--space-8); border-radius: var(--radius-base); transition: background-color var(--duration-fast) var(--ease-standard); }
+.checkbox-label:hover { background: var(--color-secondary); }
+.checkbox-label input { margin-right: var(--space-8); }
+
+.intensity-tool { max-width: 500px; }
+.intensity-slider { width: 100%; height: 8px; border-radius: var(--radius-base); background: var(--color-secondary); outline: none; margin: var(--space-16) 0; }
+.intensity-slider::-webkit-slider-thumb { appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; }
+.intensity-slider::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; border: none; }
+.intensity-value { text-align: center; font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: var(--space-16); }
+
+.regulation-guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-20); margin-bottom: var(--space-32); }
+.when-regulate,.when-listen { border-left: 4px solid var(--color-primary); }
+.when-regulate ul,.when-listen ul { margin: 0; padding-left: var(--space-20); }
+.when-regulate li,.when-listen li { margin-bottom: var(--space-8); }
+
+.techniques-section { margin-top: var(--space-32); }
+.techniques-tabs { display: flex; gap: var(--space-4); margin-bottom: var(--space-24); flex-wrap: wrap; }
+.tech-tab-btn { background: var(--color-secondary); color: var(--color-text); border: 1px solid var(--color-border); padding: var(--space-8) var(--space-16); border-radius: var(--radius-base); cursor: pointer; transition: all var(--duration-normal) var(--ease-standard); font-weight: var(--font-weight-medium); }
+.tech-tab-btn.active { background: var(--color-primary); color: var(--color-btn-primary-text); border-color: var(--color-primary); }
+.tech-content { display: none; }
+.tech-content.active { display: block; }
+.technique-steps { display: grid; gap: var(--space-16); }
+.step { padding: var(--space-16); background: var(--color-secondary); border-radius: var(--radius-base); border-left: 4px solid var(--color-primary); }
+.step h4 { color: var(--color-primary); margin-bottom: var(--space-8); }
+.transform-steps { background: var(--color-secondary); padding: var(--space-20); border-radius: var(--radius-base); border-left: 4px solid #4ecdc4; }
+.transform-steps h4 { color: var(--color-primary); margin-bottom: var(--space-16); }
+.transform-steps ol { margin: 0; padding-left: var(--space-20); }
+.transform-steps li { margin-bottom: var(--space-8); font-weight: var(--font-weight-medium); }
+
+.exercises-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-20); }
+.exercise-card { text-align: center; transition: transform var(--duration-normal) var(--ease-standard); }
+.exercise-card:hover { transform: translateY(-4px); }
+.exercise-card h3 { color: var(--color-primary); margin-bottom: var(--space-12); }
+
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); }
+.modal-content { background-color: var(--color-surface); margin: 5% auto; padding: var(--space-24); border-radius: var(--radius-lg); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: var(--shadow-lg); }
+.close { position: absolute; right: var(--space-16); top: var(--space-16); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); cursor: pointer; color: var(--color-text-secondary); transition: color var(--duration-fast) var(--ease-standard); }
+.close:hover { color: var(--color-primary); }
+
+#journal-form .form-group { margin-bottom: var(--space-16); }
+#journal-form textarea { min-height: 80px; resize: vertical; }
+
+.affirmation-display { background: linear-gradient(135deg, var(--color-primary), #4ecdc4); color: var(--color-btn-primary-text); padding: var(--space-24); border-radius: var(--radius-lg); text-align: center; font-size: var(--font-size-xl); font-weight: var(--font-weight-medium); margin-bottom: var(--space-20); min-height: 80px; display: flex; align-items: center; justify-content: center; }
+
+.conversation { max-width: 500px; }
+.conversation-step { margin-bottom: var(--space-20); padding: var(--space-16); background: var(--color-secondary); border-radius: var(--radius-base); }
+.conversation-step p { margin-bottom: var(--space-12); font-style: italic; color: var(--color-primary); }
+
+.audio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-24); }
+.audio-item h3 { color: var(--color-primary); margin-bottom: var(--space-12); }
+.audio-player { display: flex; align-items: center; gap: var(--space-12); margin: var(--space-16) 0; padding: var(--space-12); background: var(--color-secondary); border-radius: var(--radius-base); }
+.play-btn { background: var(--color-primary); color: var(--color-btn-primary-text); border: none; border-radius: 50%; width: 48px; height: 48px; cursor: pointer; font-size: var(--font-size-lg); transition: all var(--duration-normal) var(--ease-standard); display: flex; align-items: center; justify-content: center; }
+.play-btn:hover { background: var(--color-primary-hover); transform: scale(1.05); }
+.play-btn.playing { background: var(--color-warning); }
+.audio-progress { flex: 1; height: 6px; background: var(--color-border); border-radius: var(--radius-base); overflow: hidden; }
+.progress-bar { height: 100%; background: var(--color-primary); width: 0%; transition: width var(--duration-fast) linear; }
+.audio-time { font-family: var(--font-family-mono); font-size: var(--font-size-sm); color: var(--color-text-secondary); min-width: 40px; text-align: right; }
+.audio-transcript,.breathing-guide,.affirmations-list { margin-top: var(--space-16); padding: var(--space-16); background: var(--color-secondary); border-radius: var(--radius-base); }
+.audio-transcript h4,.breathing-guide h4,.affirmations-list h4 { color: var(--color-primary); margin-bottom: var(--space-12); }
+.breathing-guide ol { margin: 0; padding-left: var(--space-20); }
+.breathing-guide li { margin-bottom: var(--space-4); }
+.affirmations-list ul { margin: 0; padding-left: var(--space-20); }
+.affirmations-list li { margin-bottom: var(--space-8); font-style: italic; }
+
+.success-message { background: rgba(var(--color-success-rgb), 0.1); color: var(--color-success); padding: var(--space-12); border-radius: var(--radius-base); border: 1px solid rgba(var(--color-success-rgb), 0.2); margin: var(--space-16) 0; }
+.error-message { background: rgba(var(--color-error-rgb), 0.1); color: var(--color-error); padding: var(--space-12); border-radius: var(--radius-base); border: 1px solid rgba(var(--color-error-rgb), 0.2); margin: var(--space-16) 0; }
+
+@media (max-width: 768px) {
+  .header { padding: var(--space-20) 0; }
+  .header h1 { font-size: var(--font-size-3xl); }
+  .main-nav { gap: var(--space-4); }
+  .nav-btn { padding: var(--space-6) var(--space-12); font-size: var(--font-size-sm); }
+  .comparison-table { grid-template-columns: 1fr; gap: var(--space-4); }
+  .comparison-header { display: none; }
+  .comparison-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-base); overflow: hidden; }
+  .comparison-cell.aspect { grid-column: 1 / -1; text-align: center; font-weight: var(--font-weight-bold); background: var(--color-primary); color: var(--color-btn-primary-text); }
+  .modal-content { width: 95%; margin: 2% auto; padding: var(--space-16); }
+  .audio-player { flex-direction: column; align-items: stretch; gap: var(--space-8); }
+  .quick-actions { flex-direction: column; }
+  .question-item { flex-direction: column; align-items: stretch; text-align: center; }
+  .rating-buttons { justify-content: center; margin-top: var(--space-8); }
+}
+
+.section { opacity: 0; transform: translateY(20px); transition: all var(--duration-normal) var(--ease-standard); }
+.section.active { opacity: 1; transform: translateY(0); }
+
+.nav-btn:focus-visible,.tab-btn:focus-visible,.tech-tab-btn:focus-visible { outline: var(--focus-outline); outline-offset: 2px; }
+.rating-btn:focus-visible { outline: var(--focus-outline); outline-offset: 2px; }
+
+@media (prefers-color-scheme: dark) {
+  .header { background: linear-gradient(135deg, var(--color-primary) 0%, #2d7a87 100%); }
+  .comparison-cell.shame { border-left-color: #ff8a8a; }
+  .comparison-cell.guilt { border-left-color: #6ee7de; }
+}
+[data-color-scheme="dark"] .header { background: linear-gradient(135deg, var(--color-primary) 0%, #2d7a87 100%); }
+[data-color-scheme="dark"] .comparison-cell.shame { border-left-color: #ff8a8a; }
+[data-color-scheme="dark"] .comparison-cell.guilt { border-left-color: #6ee7de; }
+  </style>
+</head>
+<body>
+  <noscript>Do działania tej strony wymagany jest JavaScript.</noscript>
+  <div class="container">
+    <header class="header">
+      <h1>Wstyd vs Poczucie Winy</h1>
+      <p class="header-subtitle">Przewodnik po emocjach, które mogą być zarówno pomocne, jak i szkodliwe</p>
+      <nav class="main-nav">
+        <button class="nav-btn active" data-section="home">Start</button>
+        <button class="nav-btn" data-section="differences">Różnice</button>
+        <button class="nav-btn" data-section="assessment">Ocena</button>
+        <button class="nav-btn" data-section="regulation">Regulacja</button>
+        <button class="nav-btn" data-section="exercises">Ćwiczenia</button>
+        <button class="nav-btn" data-section="audio">Audio</button>
+      </nav>
+    </header>
+
+    <section id="home" class="section active">
+      <div class="intro-card card">
+        <div class="card__body">
+          <h2>Witaj w przewodniku po wstydzie i poczuciu winy</h2>
+          <p>Te dwie emocje często mylone ze sobą mają zupełnie różne funkcje i wymagają różnych podejść. Poznaj różnice między nimi i naucz się, jak konstruktywnie z nimi pracować.</p>
+          <div class="quick-start">
+            <h3>Zacznij od:</h3>
+            <div class="quick-actions">
+              <button class="btn btn--primary" onclick="showSection('assessment')">Test podatności na wstyd</button>
+              <button class="btn btn--secondary" onclick="showSection('differences')">Poznaj różnice</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview-grid">
+        <div class="overview-item card"><div class="card__body"><h3>🔍 Rozpoznanie</h3><p>Naucz się odróżniać wstyd od poczucia winy i rozpoznawać, kiedy emocje są uzasadnione.</p></div></div>
+        <div class="overview-item card"><div class="card__body"><h3>⚖️ Regulacja</h3><p>Poznaj różne techniki regulacji emocji i dowiedz się, kiedy je stosować.</p></div></div>
+        <div class="overview-item card"><div class="card__body"><h3>🎯 Praktyka</h3><p>Wykonuj interaktywne ćwiczenia i prowadź dziennik swoich doświadczeń.</p></div></div>
+      </div>
+    </section>
+
+    <section id="differences" class="section">
+      <h2>Różnice między wstydem a poczuciem winy</h2>
+      <div class="comparison-table">
+        <div class="comparison-header">
+          <div class="comparison-cell">Aspekt</div>
+          <div class="comparison-cell shame">Wstyd</div>
+          <div class="comparison-cell guilt">Poczucie winy</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell aspect">Definicja</div>
+          <div class="comparison-cell">Globalna ocena siebie jako złego, niewartościowego</div>
+          <div class="comparison-cell">Negatywna ocena konkretnego zachowania</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell aspect">Charakterystyczna myśl</div>
+          <div class="comparison-cell">"Jestem beznadziejny/a"</div>
+          <div class="comparison-cell">"Zrobiłem/am coś złego"</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell aspect">Reakcja ciała</div>
+          <div class="comparison-cell">Rumieńce, uczucie gorąca, chęć ukrycia się</div>
+          <div class="comparison-cell">Napięcie w żołądku, ciężkość</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell aspect">Zachowanie</div>
+          <div class="comparison-cell">Wycofanie, izolacja, unikanie</div>
+          <div class="comparison-cell">Próby naprawy, przeprosiny</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell aspect">Na co się skupia</div>
+          <div class="comparison-cell">Atakuje tożsamość - "jestem zły"</div>
+          <div class="comparison-cell">Skupia się na zachowaniu - "zrobiłem coś złego"</div>
+        </div>
+      </div>
+
+      <div class="examples-section">
+        <h3>Przykłady z życia</h3>
+        <div class="examples-grid">
+          <div class="example-card card"><div class="card__body"><h4>Wstyd</h4><p><strong>Sytuacja:</strong> Popełniłeś błąd w pracy</p><p><strong>Myśl wstydu:</strong> "Jestem kompletnie beznadziejny. Wszyscy widzą, że nie nadaję się do tej pracy."</p><p><strong>Reakcja:</strong> Unikasz kontaktu wzrokowego, chowasz się, rezygnujesz z dalszych inicjatyw</p></div></div>
+          <div class="example-card card"><div class="card__body"><h4>Poczucie winy</h4><p><strong>Sytuacja:</strong> Popełniłeś błąd w pracy</p><p><strong>Myśl poczucia winy:</strong> "Zrobiłem błąd. Powinienem był sprawdzić to dokładniej."</p><p><strong>Reakcja:</strong> Przepraszasz, naprawiasz błąd, uczysz się na przyszłość</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment" class="section">
+      <h2>Ocena emocji</h2>
+      <div class="assessment-tabs">
+        <button class="tab-btn active" data-tab="vulnerability">Test podatności</button>
+        <button class="tab-btn" data-tab="justified">Czy emocja jest uzasadniona?</button>
+        <button class="tab-btn" data-tab="intensity">Kalkulator intensywności</button>
+      </div>
+
+      <div id="vulnerability" class="tab-content active">
+        <div class="card"><div class="card__body">
+          <h3>Test podatności na wstyd</h3>
+          <p>Odpowiedz na poniższe pytania, oceniając każde w skali 1-5:</p>
+          <div class="vulnerability-test">
+            <div id="vulnerability-questions"></div>
+            <button class="btn btn--primary" onclick="calculateVulnerability()">Oblicz wynik</button>
+            <div id="vulnerability-result" class="result-card" style="display: none;"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div id="justified" class="tab-content">
+        <div class="card"><div class="card__body">
+          <h3>Sprawdzanie uzasadnienia emocji</h3>
+          <div class="fact-check-tool">
+            <h4>Krok 1: Opisz sytuację</h4>
+            <textarea id="situation-description" class="form-control" placeholder="Opisz co się wydarzyło używając tylko faktów (co można by nagrać kamerą)..."></textarea>
+            <h4>Krok 2: Zapisz swoje myśli</h4>
+            <textarea id="thoughts-description" class="form-control" placeholder="Jakie myśli przychodzą ci do głowy? Jakie interpretacje robisz?"></textarea>
+            <h4>Krok 3: Zadaj sobie pytania kontrolne</h4>
+            <div class="control-questions">
+              <label class="checkbox-label"><input type="checkbox" id="q1"> Czy używam słów "zawsze", "nigdy", "muszę"?</label>
+              <label class="checkbox-label"><input type="checkbox" id="q2"> Czy to globalny osąd o mnie jako osobie?</label>
+              <label class="checkbox-label"><input type="checkbox" id="q3"> Czy wynika to ze starych przekonań rodzinnych?</label>
+              <label class="checkbox-label"><input type="checkbox" id="q4"> Czy ktoś realnie ucierpiał?</label>
+            </div>
+            <button class="btn btn--primary" onclick="analyzeJustification()">Przeanalizuj</button>
+            <div id="justification-result" class="result-card" style="display: none;"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div id="intensity" class="tab-content">
+        <div class="card"><div class="card__body">
+          <h3>Kalkulator intensywności emocji</h3>
+          <div class="intensity-tool">
+            <label class="form-label">Jak intensywnie czujesz tę emocję? (1-10)</label>
+            <input type="range" id="intensity-slider" class="intensity-slider" min="1" max="10" value="5" />
+            <div class="intensity-value" id="intensity-value">5</div>
+            <label class="form-label">Rodzaj emocji:</label>
+            <select id="emotion-type" class="form-control">
+              <option value="shame">Wstyd</option>
+              <option value="guilt">Poczucie winy</option>
+            </select>
+            <button class="btn btn--primary" onclick="calculateIntensity()">Oceń intensywność</button>
+            <div id="intensity-result" class="result-card" style="display: none;"></div>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="regulation" class="section">
+      <h2>Regulacja emocji</h2>
+      <div class="regulation-guide">
+        <div class="when-regulate card"><div class="card__body"><h3>Kiedy regulować emocje?</h3><ul><li>Gdy są zbyt intensywne i paraliżują</li><li>Gdy prowadzą do destrukcyjnych zachowań</li><li>Gdy nie motywują do naprawy, tylko do samobiczowania</li><li>Gdy jesteś poza strefą tolerancji</li></ul></div></div>
+        <div class="when-listen card"><div class="card__body"><h3>Kiedy słuchać emocji?</h3><ul><li>Gdy są proporcjonalne i motywują do naprawy</li><li>Gdy można bezpiecznie je przeżyć</li><li>Gdy dostarczają ważnych informacji</li><li>Gdy prowadzą do konstruktywnych działań</li></ul></div></div>
+      </div>
+      <div class="techniques-section">
+        <h3>Techniki regulacji</h3>
+        <div class="techniques-tabs">
+          <button class="tech-tab-btn active" data-tech="shame">Regulacja wstydu</button>
+          <button class="tech-tab-btn" data-tech="guilt">Regulacja poczucia winy</button>
+          <button class="tech-tab-btn" data-tech="transform">Transformacja wstyd → wina</button>
+        </div>
+        <div id="shame-techniques" class="tech-content active">
+          <div class="technique-steps">
+            <div class="step"><h4>1. Nazwij emocję</h4><p>"Czuję wstyd, bo..."</p></div>
+            <div class="step"><h4>2. Zatrzymaj się i oddychaj</h4><p>Zrób kilka głębokich oddechów, zanim zareagujesz</p></div>
+            <div class="step"><h4>3. Praktykuj współczucie dla siebie</h4><p>Zadaj sobie pytanie: "Co powiedziałbym przyjacielowi w tej sytuacji?"</p></div>
+            <div class="step"><h4>4. Znajdź zaufaną osobę</h4><p>Wstyd słabnie, gdy jest dzielony z empatyczną osobą</p></div>
+            <div class="step"><h4>5. Kwestionuj globalne osądy</h4><p>Przejdź od "Jestem zły" do "Zrobiłem coś, czego żałuję"</p></div>
+          </div>
+        </div>
+        <div id="guilt-techniques" class="tech-content">
+          <div class="technique-steps">
+            <div class="step"><h4>1. Sprawdź fakty vs przekonania</h4><p>Oddziel to, co się naprawdę wydarzyło od swojej interpretacji</p></div>
+            <div class="step"><h4>2. Określ możliwość naprawy</h4><p>Zadaj pytanie: "Co mogę zrobić, żeby to naprawić?"</p></div>
+            <div class="step"><h4>3. Przeproś, jeśli to uzasadnione</h4><p>Składaj szczere przeprosiny bez usprawiedliwień</p></div>
+            <div class="step"><h4>4. Wyciągnij wnioski</h4><p>Naucz się czegoś na przyszłość z tej sytuacji</p></div>
+            <div class="step"><h4>5. Zastąp samokrytykę działaniem</h4><p>Skup się na tym, co możesz zrobić teraz</p></div>
+          </div>
+        </div>
+        <div id="transform-techniques" class="tech-content">
+          <div class="transform-steps">
+            <h4>Jak zamienić wstyd w poczucie winy:</h4>
+            <ol>
+              <li>Przejdź od "jestem zły" do "zrobiłem coś złego"</li>
+              <li>Skup się na konkretnym zachowaniu, nie na całej osobie</li>
+              <li>Zadaj pytanie: "Co mogę naprawić?" zamiast "Dlaczego jestem taki?"</li>
+              <li>Praktykuj samoakceptację przy jednoczesnej odpowiedzialności</li>
+              <li>Używaj języka zachowań: "Gdy robiłem X..." zamiast "Jestem osobą, która..."</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exercises" class="section">
+      <h2>Interaktywne ćwiczenia</h2>
+      <div class="exercises-grid">
+        <div class="exercise-card card"><div class="card__body"><h3>📝 Dziennik wstydu</h3><p>Codzienny dziennik do śledzenia swoich doświadczeń wstydu</p><button class="btn btn--primary" onclick="openJournal()">Rozpocznij dziennik</button></div></div>
+        <div class="exercise-card card"><div class="card__body"><h3>🔍 Sprawdzanie faktów</h3><p>Interaktywne ćwiczenie oddzielania faktów od interpretacji</p><button class="btn btn--primary" onclick="openFactCheck()">Sprawdź fakty</button></div></div>
+        <div class="exercise-card card"><div class="card__body"><h3>💭 Generator afirmacji</h3><p>Personalizowane pozytywne komunikaty do siebie</p><button class="btn btn--primary" onclick="generateAffirmation()">Generuj afirmację</button></div></div>
+        <div class="exercise-card card"><div class="card__body"><h3>👥 Rozmowa z przyjacielem</h3><p>Ćwiczenie zmiany perspektywy przez współczucie</p><button class="btn btn--primary" onclick="openFriendTalk()">Rozpocznij rozmowę</button></div></div>
+      </div>
+
+      <div id="journal-modal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('journal-modal')">&times;</span><h3>Dziennik wstydu</h3><form id="journal-form"><div class="form-group"><label class="form-label">Co się wydarzyło?</label><textarea class="form-control" name="situation" required></textarea></div><div class="form-group"><label class="form-label">Co wywołało wstyd?</label><textarea class="form-control" name="trigger" required></textarea></div><div class="form-group"><label class="form-label">Gdzie poczułem to w ciele?</label><textarea class="form-control" name="body" required></textarea></div><div class="form-group"><label class="form-label">Co mówiłem sobie?</label><textarea class="form-control" name="thoughts" required></textarea></div><div class="form-group"><label class="form-label">Jak zareagowałem?</label><textarea class="form-control" name="reaction" required></textarea></div><div class="form-group"><label class="form-label">Co powiedziałbym przyjacielowi w tej sytuacji?</label><textarea class="form-control" name="friend" required></textarea></div><div class="form-group"><label class="form-label">Intensywność (1-10):</label><input type="number" class="form-control" name="intensity" min="1" max="10" required></div><button type="submit" class="btn btn--primary">Zapisz wpis</button></form></div></div>
+
+      <div id="affirmation-modal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('affirmation-modal')">&times;</span><h3>Twoja afirmacja</h3><div id="affirmation-text" class="affirmation-display"></div><button class="btn btn--secondary" onclick="generateAffirmation()">Nowa afirmacja</button></div></div>
+
+      <div id="friend-modal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('friend-modal')">&times;</span><h3>Rozmowa z empatycznym przyjacielem</h3><div id="friend-conversation" class="conversation"><div class="conversation-step"><p><strong>Przyjaciel:</strong> Opowiedz mi, co się stało. Słucham bez osądzania.</p><textarea id="friend-situation" class="form-control" placeholder="Opisz swoją sytuację..."></textarea><button class="btn btn--primary" onclick="friendResponse()">Podziel się</button></div><div id="friend-response" style="display: none;"></div></div></div></div>
+    </section>
+
+    <section id="audio" class="section">
+      <h2>Nagrania audio</h2>
+      <div class="audio-grid">
+        <div class="audio-item card"><div class="card__body"><h3>🧘‍♀️ Medytacja uważności na wstyd</h3><p>10-minutowa medytacja pomagająca w pracy ze wstydem</p><div class="audio-player"><button class="play-btn" onclick="playAudio('meditation')">▶️ Odtwórz</button><div class="audio-progress"><div class="progress-bar" id="meditation-progress"></div></div><span class="audio-time">10:00</span></div><div class="audio-transcript"><h4>Transkrypcja:</h4><p>Znajdź wygodną pozycję i zamknij oczy... Zrób kilka głębokich oddechów... Jeśli pojawia się uczucie wstydu, po prostu je zauważ... Nie próbuj go zmieniać ani przepędzić... Obserwuj, gdzie czujesz go w ciele... Powiedz sobie łagodnie: 'To tylko emocja, przejdzie'... Wyślij sobie współczucie, jakbyś wysyłał je przyjacielowi...</p></div></div></div>
+        <div class="audio-item card"><div class="card__body"><h3>🌬️ Ćwiczenie oddechowe 4-7-8</h3><p>Technika oddechowa do regulacji intensywnych emocji</p><div class="audio-player"><button class="play-btn" onclick="playAudio('breathing')">▶️ Odtwórz</button><div class="audio-progress"><div class="progress-bar" id="breathing-progress"></div></div><span class="audio-time">5:00</span></div><div class="breathing-guide"><h4>Instrukcja:</h4><ol><li>Wdech przez nos przez 4 sekundy</li><li>Wstrzymaj oddech na 7 sekund</li><li>Wydech przez usta przez 8 sekund</li><li>Powtórz 4 razy</li></ol></div></div></div>
+        <div class="audio-item card"><div class="card__body"><h3>💚 Relaksacja dla poczucia winy</h3><p>Ćwiczenie uwalniania napięć związanych z poczuciem winy</p><div class="audio-player"><button class="play-btn" onclick="playAudio('guilt-release')">▶️ Odtwórz</button><div class="audio-progress"><div class="progress-bar" id="guilt-release-progress"></div></div><span class="audio-time">8:00</span></div><div class="audio-transcript"><h4>Transkrypcja:</h4><p>Usiądź wygodnie i zrób kilka głębokich oddechów... Pomyśl o sytuacji, która wywołuje poczucie winy... Zadaj sobie pytania: Co się naprawdę wydarzyło? Czy mogę to naprawić? Jeśli tak - zaplanuj konkretne działania... Jeśli nie - pozwól sobie na wybaczenie... Powtarzaj: 'Jestem człowiekiem, popełniam błędy i mogę się uczyć'...</p></div></div></div>
+        <div class="audio-item card"><div class="card__body"><h3>✨ Afirmacje współczucia</h3><p>Pozytywne komunikaty do siebie w trudnych momentach</p><div class="audio-player"><button class="play-btn" onclick="playAudio('affirmations')">▶️ Odtwórz</button><div class="audio-progress"><div class="progress-bar" id="affirmations-progress"></div></div><span class="audio-time">6:00</span></div><div class="affirmations-list"><h4>Przykładowe afirmacje:</h4><ul><li>Jestem człowiekiem i mam prawo do błędów</li><li>Mogę się uczyć i rosnąć dzięki swoim doświadczeniom</li><li>Zasługuję na współczucie, zwłaszcza od siebie</li><li>Moja wartość nie zależy od moich błędów</li></ul></div></div></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+// ===== app.js (inlined) =====
+class EmotionApp {
+  constructor() {
+    this.currentSection = 'home';
+    this.journalEntries = [];
+    this.audioPlayers = {};
+    this.vulnerabilityAnswers = {};
+    this.init();
+  }
+  init() {
+    this.setupNavigation();
+    this.setupTabs();
+    this.setupVulnerabilityTest();
+    this.setupIntensitySlider();
+    this.setupTechniqueTabs();
+    this.setupModals();
+    this.setupAudioPlayers();
+    this.setupForms();
+  }
+  setupNavigation() {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.dataset.section;
+        this.showSection(section);
+      });
+    });
+  }
+  showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => { section.classList.remove('active'); });
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) { targetSection.classList.add('active'); }
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.dataset.section === sectionId) { btn.classList.add('active'); }
+    });
+    this.currentSection = sectionId;
+  }
+  setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        this.showTab(tabId, btn.closest('.section'));
+      });
+    });
+  }
+  showTab(tabId, container) {
+    const tabContents = container.querySelectorAll('.tab-content');
+    tabContents.forEach(content => { content.classList.remove('active'); });
+    const targetContent = container.querySelector(`#${tabId}`);
+    if (targetContent) { targetContent.classList.add('active'); }
+    const tabButtons = container.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.dataset.tab === tabId) { btn.classList.add('active'); }
+    });
+  }
+  setupVulnerabilityTest() {
+    const questions = [
+      "Często wstydzę się gdy popełniam błędy przy innych",
+      "Unikam sytuacji gdzie mogę być oceniony/a",
+      "Martwię się tym co inni o mnie myślą",
+      "Czuję się nieswojo w centrum uwagi",
+      "Wstydzę się swojego wyglądu",
+      "Trudno mi mówić o swoich problemach",
+      "Porównuję się z innymi i czuję się gorszy/a",
+      "Gdy się wstydzę, chcę się ukryć",
+      "Wstyd wpływa na moje decyzje",
+      "Trudno mi mówić o swoim wstydzie"
+    ];
+    const container = document.getElementById('vulnerability-questions');
+    if (container) {
+      container.innerHTML = '';
+      questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question-item';
+        questionDiv.innerHTML = `
+          <div class="question-text">${question}</div>
+          <div class="rating-buttons">
+            ${[1,2,3,4,5].map(num => `<button class="rating-btn" data-question="${index}" data-value="${num}">${num}</button>`).join('')}
+          </div>
+        `;
+        container.appendChild(questionDiv);
+      });
+      container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('rating-btn')) {
+          const question = e.target.dataset.question;
+          const value = e.target.dataset.value;
+          const questionButtons = container.querySelectorAll(`[data-question="${question}"]`);
+          questionButtons.forEach(btn => btn.classList.remove('selected'));
+          e.target.classList.add('selected');
+          this.vulnerabilityAnswers[question] = parseInt(value);
+        }
+      });
+    }
+  }
+  calculateVulnerability() {
+    if (!this.vulnerabilityAnswers || Object.keys(this.vulnerabilityAnswers).length < 10) {
+      alert('Proszę odpowiedzieć na wszystkie pytania (wybierz liczby od 1 do 5 dla każdego pytania).');
+      return;
+    }
+    const total = Object.values(this.vulnerabilityAnswers).reduce((sum, val) => sum + val, 0);
+    const resultDiv = document.getElementById('vulnerability-result');
+    let interpretation = '';
+    let advice = '';
+    let statusClass = '';
+    if (total <= 20) { interpretation = 'Niska podatność na wstyd'; advice = 'Twoja podatność na wstyd jest niska. To dobra wiadomość! Prawdopodobnie radzisz sobie dobrze z błędami i nie pozwalasz im definiować Twojej wartości. Kontynuuj pracę nad samoakceptacją.'; statusClass = 'status--success'; }
+    else if (total <= 35) { interpretation = 'Średnia podatność na wstyd'; advice = 'Twoja podatność na wstyd jest przeciętna. Czasami może Cię to ograniczać, ale nie dominuje w Twoim życiu. Warto poznać techniki regulacji wstydu, aby lepiej sobie z nim radzić.'; statusClass = 'status--info'; }
+    else { interpretation = 'Wysoka podatność na wstyd'; advice = 'Twoja podatność na wstyd jest wysoka. Może to znacząco wpływać na Twoje codzienne funkcjonowanie i decyzje. Zdecydowanie warto poćwiczyć techniki regulacji wstydu i rozważyć wsparcie specjalisty.'; statusClass = 'status--warning'; }
+    resultDiv.innerHTML = `
+      <h4>Twój wynik: ${total}/50</h4>
+      <div class="status ${statusClass}">${interpretation}</div>
+      <p><strong>Interpretacja:</strong> ${advice}</p>
+      <div style="margin-top: 16px;"><button class="btn btn--secondary" onclick="app.showSection('regulation')">Przejdź do technik regulacji</button></div>
+    `;
+    resultDiv.style.display = 'block';
+  }
+  analyzeJustification() {
+    const situation = document.getElementById('situation-description').value.trim();
+    const thoughts = document.getElementById('thoughts-description').value.trim();
+    const checkboxes = ['q1', 'q2', 'q3', 'q4'].map(id => document.getElementById(id).checked);
+    if (!situation || !thoughts) { alert('Proszę wypełnić opis sytuacji i myśli.'); return; }
+    const redFlags = checkboxes.filter(checked => checked).length;
+    const resultDiv = document.getElementById('justification-result');
+    let analysis = '';
+    let recommendation = '';
+    if (redFlags >= 3) { analysis = 'Prawdopodobnie masz do czynienia z nieuzasadnionym wstydem lub poczuciem winy.'; recommendation = 'Warto przepracować te przekonania używając technik regulacji emocji. Skup się na faktach, a nie na interpretacjach.'; }
+    else if (redFlags >= 1) { analysis = 'Twoja emocja może być częściowo uzasadniona, ale warto sprawdzić czy nie przesadzasz.'; recommendation = 'Przeanalizuj sytuację jeszcze raz, oddzielając fakty od interpretacji. Zadaj sobie pytanie: "Co powiedziałbym przyjacielowi w tej sytuacji?"'; }
+    else { analysis = 'Twoja emocja wydaje się uzasadniona i może dostarczać ważnych informacji.'; recommendation = 'Jeśli emocja jest proporcjonalna do sytuacji, warto jej wysłuchać i podjąć konstruktywne działania.'; }
+    resultDiv.innerHTML = `
+      <h4>Analiza sytuacji</h4>
+      <div class="status ${redFlags >= 2 ? 'status--warning' : 'status--success'}">${analysis}</div>
+      <p><strong>Rekomendacja:</strong> ${recommendation}</p>
+      <div style="margin-top: 16px;"><button class="btn btn--primary" onclick="app.showSection('regulation')">Zobacz techniki regulacji</button></div>
+    `;
+    resultDiv.style.display = 'block';
+  }
+  setupIntensitySlider() {
+    const slider = document.getElementById('intensity-slider');
+    const valueDisplay = document.getElementById('intensity-value');
+    if (slider && valueDisplay) {
+      slider.addEventListener('input', (e) => { valueDisplay.textContent = e.target.value; });
+    }
+  }
+  calculateIntensity() {
+    const intensity = document.getElementById('intensity-slider').value;
+    const emotionType = document.getElementById('emotion-type').value;
+    const resultDiv = document.getElementById('intensity-result');
+    let advice = '';
+    let action = '';
+    if (intensity <= 3) { advice = 'Niska intensywność - emocja jest łagodna i można ją bezpiecznie przeżyć.'; action = 'Obserwuj emocję i wyciągnij z niej wnioski. Nie potrzebujesz specjalnych technik regulacji.'; }
+    else if (intensity <= 7) { advice = 'Średnia intensywność - emocja jest odczuwalna, ale można z nią pracować.'; action = emotionType === 'shame' ? 'Użyj technik regulacji wstydu: nazwij emocję, oddychaj głęboko, praktykuj współczucie dla siebie.' : 'Sprawdź czy możesz naprawić sytuację. Jeśli tak - podejmij działania. Jeśli nie - pracuj nad wybaczeniem sobie.'; }
+    else { advice = 'Wysoka intensywność - emocja może być przytłaczająca i paraliżująca.'; action = 'Najpierw użyj technik regulacji, żeby obniżyć intensywność, dopiero potem analizuj czy emocja jest uzasadniona.'; }
+    resultDiv.innerHTML = `
+      <h4>Ocena intensywności: ${intensity}/10</h4>
+      <div class="status ${intensity > 7 ? 'status--warning' : intensity > 3 ? 'status--info' : 'status--success'}">${advice}</div>
+      <p><strong>Zalecane działanie:</strong> ${action}</p>
+    `;
+    resultDiv.style.display = 'block';
+  }
+  setupTechniqueTabs() {
+    const techButtons = document.querySelectorAll('.tech-tab-btn');
+    techButtons.forEach(btn => { btn.addEventListener('click', () => { const techId = btn.dataset.tech; this.showTechnique(techId); }); });
+  }
+  showTechnique(techId) {
+    const techContents = document.querySelectorAll('.tech-content');
+    techContents.forEach(content => { content.classList.remove('active'); });
+    const targetContent = document.getElementById(`${techId}-techniques`);
+    if (targetContent) { targetContent.classList.add('active'); }
+    const techButtons = document.querySelectorAll('.tech-tab-btn');
+    techButtons.forEach(btn => { btn.classList.remove('active'); if (btn.dataset.tech === techId) { btn.classList.add('active'); } });
+  }
+  setupModals() {
+    window.addEventListener('click', (e) => { if (e.target.classList.contains('modal')) { e.target.style.display = 'none'; } });
+  }
+  openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.style.display = 'block'; } }
+  closeModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.style.display = 'none'; } }
+  openJournal() { this.openModal('journal-modal'); }
+  openFactCheck() { this.showSection('assessment'); this.showTab('justified', document.getElementById('assessment')); }
+  generateAffirmation() {
+    const affirmations = [
+      "Jestem człowiekiem i mam prawo do błędów",
+      "Mogę się uczyć i rosnąć dzięki swoim doświadczeniom",
+      "Zasługuję na współczucie, zwłaszcza od siebie",
+      "Moja wartość nie zależy od moich błędów",
+      "Jestem wystarczająco dobry/a taki/a, jaki/a jestem",
+      "Mogę wybaczać sobie i innym",
+      "Każdy dzień to nowa szansa na lepsze wybory",
+      "Jestem odpowiedzialny/a za swoje czyny, ale to nie definiuje mnie jako osoby",
+      "Mogę odczuwać trudne emocje i nadal być w porządku",
+      "Mam siłę, żeby poradzić sobie z wyzwaniami"
+    ];
+    const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+    const affirmationDisplay = document.getElementById('affirmation-text');
+    if (affirmationDisplay) { affirmationDisplay.textContent = randomAffirmation; }
+    this.openModal('affirmation-modal');
+  }
+  openFriendTalk() {
+    this.openModal('friend-modal');
+    const situationField = document.getElementById('friend-situation');
+    const responseDiv = document.getElementById('friend-response');
+    if (situationField) situationField.value = '';
+    if (responseDiv) responseDiv.style.display = 'none';
+  }
+  friendResponse() {
+    const situation = document.getElementById('friend-situation').value.trim();
+    if (!situation) { alert('Proszę opisać swoją sytuację.'); return; }
+    const responses = [
+      `Dziękuję za podzielenie się tym ze mną. Widzę, że to dla Ciebie trudne. Pamiętaj, że wszyscy popełniamy błędy - to część bycia człowiekiem.`,
+      `Rozumiem, że się tym martwisz. Ale czy nie jesteś za surowy/a dla siebie? Co powiedziałbyś/abyś komuś innemu w takiej sytuacji?`,
+      `To brzmi naprawdę trudno. Ale widzę w Tobie siłę - skoro opowiadasz mi o tym, znaczy że chcesz coś z tym zrobić. To już duży krok.`,
+      `Każdy zasługuje na drugie szanse, włączając Ciebie. Ta sytuacja nie definiuje Cię jako osoby. Jesteś znacznie więcej niż jeden błąd.`,
+      `Widzę, że bardzo się tym przejmujesz, co pokazuje, że jesteś dobrą osobą z silnymi wartościami. Teraz pytanie: co możesz zrobić konstruktywnego?`
+    ];
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    const responseDiv = document.getElementById('friend-response');
+    if (responseDiv) {
+      responseDiv.innerHTML = `
+        <div class="conversation-step">
+          <p><strong>Przyjaciel:</strong> ${randomResponse}</p>
+          <p><strong>Przyjaciel:</strong> Jak się teraz czujesz? Co myślisz o tej sytuacji po naszej rozmowie?</p>
+          <textarea class="form-control" placeholder="Odpowiedz przyjacielowi..."></textarea>
+          <div style="margin-top: 8px;"><button class="btn btn--secondary" onclick="app.closeModal('friend-modal')">Zakończ rozmowę</button></div>
+        </div>
+      `;
+      responseDiv.style.display = 'block';
+    }
+  }
+  setupAudioPlayers() {
+    const audioData = {
+      'meditation': { duration: 600, title: 'Medytacja uważności na wstyd' },
+      'breathing': { duration: 300, title: 'Ćwiczenie oddechowe 4-7-8' },
+      'guilt-release': { duration: 480, title: 'Relaksacja dla poczucia winy' },
+      'affirmations': { duration: 360, title: 'Afirmacje współczucia' }
+    };
+    Object.keys(audioData).forEach(audioId => {
+      this.audioPlayers[audioId] = { ...audioData[audioId], isPlaying: false, currentTime: 0, interval: null };
+    });
+  }
+  playAudio(audioId) {
+    const audio = this.audioPlayers[audioId];
+    if (!audio) return;
+    const button = document.querySelector(`button[onclick="playAudio('${audioId}')"]`);
+    const progressBar = document.getElementById(`${audioId}-progress`);
+    if (!audio.isPlaying) {
+      audio.isPlaying = true;
+      if (button) { button.textContent = '⏸️ Zatrzymaj'; button.classList.add('playing'); }
+      audio.interval = setInterval(() => {
+        audio.currentTime += 1;
+        const progress = (audio.currentTime / audio.duration) * 100;
+        if (progressBar) { progressBar.style.width = `${progress}%`; }
+        if (button) {
+          const timeDisplay = button.parentElement.querySelector('.audio-time');
+          if (timeDisplay) {
+            const remaining = audio.duration - audio.currentTime;
+            const minutes = Math.floor(remaining / 60);
+            const seconds = remaining % 60;
+            timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+          }
+        }
+        if (audio.currentTime >= audio.duration) { this.stopAudio(audioId); }
+      }, 1000);
+      this.showAudioMessage(audioId, 'Odtwarzanie rozpoczęte. Znajdź spokojne miejsce i pozwól sobie na pełne doświadczenie ćwiczenia.');
+    } else {
+      this.stopAudio(audioId);
+    }
+  }
+  stopAudio(audioId) {
+    const audio = this.audioPlayers[audioId];
+    if (!audio) return;
+    const button = document.querySelector(`button[onclick="playAudio('${audioId}')"]`);
+    const progressBar = document.getElementById(`${audioId}-progress`);
+    audio.isPlaying = false;
+    audio.currentTime = 0;
+    if (button) { button.textContent = '▶️ Odtwórz'; button.classList.remove('playing'); }
+    if (audio.interval) { clearInterval(audio.interval); audio.interval = null; }
+    if (progressBar) { progressBar.style.width = '0%'; }
+    if (button) {
+      const timeDisplay = button.parentElement.querySelector('.audio-time');
+      if (timeDisplay) {
+        const minutes = Math.floor(audio.duration / 60);
+        const seconds = audio.duration % 60;
+        timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      }
+    }
+  }
+  showAudioMessage(audioId, message) {
+    const button = document.querySelector(`button[onclick="playAudio('${audioId}')"]`);
+    if (!button) return;
+    const audioItem = button.closest('.audio-item');
+    if (!audioItem) return;
+    let messageDiv = audioItem.querySelector('.audio-message');
+    if (!messageDiv) {
+      messageDiv = document.createElement('div');
+      messageDiv.className = 'audio-message success-message';
+      audioItem.querySelector('.card__body').appendChild(messageDiv);
+    }
+    messageDiv.textContent = message;
+    setTimeout(() => { if (messageDiv && messageDiv.parentNode) { messageDiv.parentNode.removeChild(messageDiv); } }, 5000);
+  }
+  setupForms() {
+    const journalForm = document.getElementById('journal-form');
+    if (journalForm) {
+      journalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.saveJournalEntry(new FormData(journalForm));
+      });
+    }
+  }
+  saveJournalEntry(formData) {
+    const entry = {
+      date: new Date().toLocaleDateString('pl-PL'),
+      situation: formData.get('situation'),
+      trigger: formData.get('trigger'),
+      body: formData.get('body'),
+      thoughts: formData.get('thoughts'),
+      reaction: formData.get('reaction'),
+      friend: formData.get('friend'),
+      intensity: formData.get('intensity')
+    };
+    this.journalEntries.push(entry);
+    const form = document.getElementById('journal-form');
+    let successMessage = form.querySelector('.success-message');
+    if (!successMessage) { successMessage = document.createElement('div'); successMessage.className = 'success-message'; form.appendChild(successMessage); }
+    successMessage.textContent = 'Wpis został zapisany! Regularne prowadzenie dziennika pomoże Ci lepiej zrozumieć swoje wzorce.';
+    form.reset();
+    setTimeout(() => { if (successMessage && successMessage.parentNode) { successMessage.parentNode.removeChild(successMessage); } }, 5000);
+    setTimeout(() => { this.closeModal('journal-modal'); }, 2000);
+  }
+}
+
+function showSection(sectionId) { if (window.app) { window.app.showSection(sectionId); } }
+function calculateVulnerability() { if (window.app) { window.app.calculateVulnerability(); } }
+function analyzeJustification() { if (window.app) { window.app.analyzeJustification(); } }
+function calculateIntensity() { if (window.app) { window.app.calculateIntensity(); } }
+function openJournal() { if (window.app) { window.app.openJournal(); } }
+function openFactCheck() { if (window.app) { window.app.openFactCheck(); } }
+function generateAffirmation() { if (window.app) { window.app.generateAffirmation(); } }
+function openFriendTalk() { if (window.app) { window.app.openFriendTalk(); } }
+function friendResponse() { if (window.app) { window.app.friendResponse(); } }
+function playAudio(audioId) { if (window.app) { window.app.playAudio(audioId); } }
+function closeModal(modalId) { if (window.app) { window.app.closeModal(modalId); } }
+
+document.addEventListener('DOMContentLoaded', function() {
+  window.app = new EmotionApp();
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const openModal = document.querySelector('.modal[style*="block"]');
+      if (openModal) { openModal.style.display = 'none'; }
+    }
+  });
+  const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('shown', function() {
+      const firstFocusable = modal.querySelector(focusableElements);
+      if (firstFocusable) { firstFocusable.focus(); }
+    });
+  });
+});
+  </script>
+</body>
+</html>

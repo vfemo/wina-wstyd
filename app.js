@@ -116,7 +116,7 @@ class EmotionApp {
                     <div class="question-text">${question}</div>
                     <div class="rating-buttons">
                         ${[1,2,3,4,5].map(num => 
-                            `<button class="rating-btn" data-question="${index}" data-value="${num}">${num}</button>`
+                            `<button type="button" class="rating-btn" data-question="${index}" data-value="${num}">${num}</button>`
                         ).join('')}
                     </div>
                 `;
@@ -175,7 +175,7 @@ class EmotionApp {
             <div class="status ${statusClass}">${interpretation}</div>
             <p><strong>Interpretacja:</strong> ${advice}</p>
             <div style="margin-top: 16px;">
-                <button class="btn btn--secondary" onclick="app.showSection('regulation')">
+                <button type="button" class="btn btn--secondary" onclick="showSection('regulation')">
                     Przejdź do technik regulacji
                 </button>
             </div>
@@ -218,7 +218,7 @@ class EmotionApp {
             <div class="status ${redFlags >= 2 ? 'status--warning' : 'status--success'}">${analysis}</div>
             <p><strong>Rekomendacja:</strong> ${recommendation}</p>
             <div style="margin-top: 16px;">
-                <button class="btn btn--primary" onclick="app.showSection('regulation')">
+                <button type="button" class="btn btn--primary" onclick="showSection('regulation')">
                     Zobacz techniki regulacji
                 </button>
             </div>
@@ -393,7 +393,7 @@ class EmotionApp {
                     <p><strong>Przyjaciel:</strong> Jak się teraz czujesz? Co myślisz o tej sytuacji po naszej rozmowie?</p>
                     <textarea class="form-control" placeholder="Odpowiedz przyjacielowi..."></textarea>
                     <div style="margin-top: 8px;">
-                        <button class="btn btn--secondary" onclick="app.closeModal('friend-modal')">Zakończ rozmowę</button>
+                        <button type="button" class="btn btn--secondary" onclick="closeModal('friend-modal')">Zakończ rozmowę</button>
                     </div>
                 </div>
             `;
